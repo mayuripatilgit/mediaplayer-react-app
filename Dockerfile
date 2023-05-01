@@ -1,8 +1,5 @@
 # Extending image
-FROM node:carbon
-
-RUN apt-get -y update
-RUN apt-get -y install autoconf automake libtool nasm make pkg-config git apt-utils
+FROM node:alpine
 
 # Create app directory
 RUN mkdir -p /usr/src/app
