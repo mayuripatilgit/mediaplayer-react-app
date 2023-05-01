@@ -1,7 +1,7 @@
 # Extending image
 FROM node:carbon
 
-RUN apt-get update && apt-get install -y apt-transport-https
+RUN apt-get -y update
 RUN apt-get -y install autoconf automake libtool nasm make pkg-config git apt-utils
 
 # Create app directory
