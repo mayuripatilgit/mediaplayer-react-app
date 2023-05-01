@@ -26,6 +26,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker-auth', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+                    bat "docker login -u ${USER} -p ${PASS}"
                     bat 'docker build -t mediaplayer-react-app .'
                     bat "echo $PASS | docker login -u $USER --password-stdin"
                     bat 'docker push mediaplayer-react-app'
