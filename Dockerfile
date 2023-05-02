@@ -13,8 +13,6 @@ RUN node -v
 COPY package.json /usr/src/app/
 COPY package-lock.json /usr/src/app/
 
-RUN npm install --force
-
 # Bundle app source
 COPY . /usr/src/app
 
@@ -29,4 +27,4 @@ ENV PUBLIC_PATH "/"
 RUN npm run build
 
 # Main command
-CMD [ "npm", "run", "start:server" ]
+CMD [ "npm", "run", "start" ]
